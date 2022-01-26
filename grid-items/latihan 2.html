@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Grid-items</title>
+
+	<style>
+		
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		body{
+			background-color: #ddd;
+		}
+
+		.container{
+			width: 80%;
+			margin: 50px auto;
+			display: grid;
+			/*grid-template-columns: minmax(200px, 300px) 1fr 1fr;
+			grid-template-rows: repeat(3, 100px);*/
+			grid-template-columns: [satu]  minmax(200px, 300px) [dua] 1fr [tiga] 1fr [empat];
+			grid-template-rows: [baris1] 100px [baris2] 100px [b3] 100px [b4];
+		}
+
+		.items{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.My-items{
+			/*grid-column-start: 1;
+			grid-column-end: 2;
+			grid-row-start: 1;
+			grid-row-end: 4;*/
+
+			grid-area: 1 / 1 / 2 / 4;
+			place-self: end start;
+
+			background-color: lightblue;
+		}
+
+		
+	</style>
+
+</head>
+<body>
+
+	<div class="container">
+		<div class="items My-items">1</div>
+		<div class="items ">2</div>
+		<div class="items ">3</div>
+		<div class="items ">4</div>
+		<div class="items ">5</div>
+		<div class="items ">6</div>
+		<!-- <div class="items i7">7</div>
+		<div class="items i8">8</div>
+		<div class="items i9">9</div> -->
+	</div>
+
+</body>
+</html>
